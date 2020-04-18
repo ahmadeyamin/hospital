@@ -6,7 +6,7 @@ use App\Model\Bed;
 use App\Model\Patient;
 use App\Model\PatientInOut;
 use App\Model\Staff;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -85,31 +85,49 @@ class HomeController extends Controller
         return view('ipd.index', compact(['opds','patients','doctors','beds']));
     }
 
-    public function patient_create()
+    public function patient_create(Request $r)
     {
-        request()->validate([
+        $r->validate([
             'name' => 'required',
         ]);
 
         $patient = Patient::create([
-            'name' => request()->name,
-            'age' => request()->age ?? null,
-            'month' => request()->month ?? null,
-            'mobileno' => request()->mobileno ?? null,
-            'email' => request()->email ?? null,
-            'dob' => request()->dob ?? null,
-            'gender' => request()->gender ?? null,
-            'marital_status' => request()->marital_status ?? null,
-            'address' => request()->address ?? null,
-            'guardian_name' => request()->guardian_name ?? null,
-            'note' => request()->note ?? null,
-            // 'known_allergies' => request()->known_allergies ?? null,
-            'blood_group' => request()->blood_group ?? null,
+            'name' => $r->name,
+            'age' => $r->age ?? null,
+            'month' => $r->month ?? null,
+            'mobileno' => $r->mobileno ?? null,
+            'email' => $r->email ?? null,
+            'dob' => $r->dob ?? null,
+            'gender' => $r->gender ?? null,
+            'marital_status' => $r->marital_status ?? null,
+            'address' => $r->address ?? null,
+            'guardian_name' => $r->guardian_name ?? null,
+            'note' => $r->note ?? null,
+            // 'known_allergies' => $r->known_allergies ?? null,
+            'blood_group' => $r->blood_group ?? null,
         ]);
 
-        if ($patient) {
-            return redirect()->back()->with('success', 'Patient Added Successfully');
+        if ($r->ajax()) {
+            if ($patient) {
+                return response([
+                    'success' => 'New Patient Added Successfully :)',
+                    'redirect' =>  route('patients'),
+                ],200);
+            }else{
+                return response([
+                    'message' => 'Somting Is Wrong Try Again',
+                ],422);
+            }
+        }else{
+            if ($patient) {
+                return redirect()->back()->with('success', 'Patient Added Successfully');
+            }else{
+                return redirect()->back()->with('errors', 'Somting Is Wrong Try Again');
+            }
+
         }
+
+
 
     }
 
@@ -117,13 +135,13 @@ class HomeController extends Controller
 
 
 
-    
 
 
 
-    public function set_opd()
+
+    public function set_opd(Request $r)
     {
-        $r = request();
+        $r = $r;
         $r->validate([
             'patient' => 'required|exists:patients,id',
             'doctor' => 'required|exists:staff,id',
@@ -150,19 +168,19 @@ class HomeController extends Controller
             'old_patient' => $r->old_patient == "Yes"? true : false,
             'payment_mode' => $r->payment_mode,
         ]);
-        
+
         if ($opd) {
             return redirect()->back()->with('success','Opd Patient Added');
         }
-        
+
     }
 
 
 
 
-    public function set_ipd()
+    public function set_ipd(Request $r)
     {
-        $r = request();
+        $r = $r;
         $r->validate([
             'patient' => 'required|exists:patients,id',
             'doctor' => 'required|exists:staff,id',
@@ -189,11 +207,11 @@ class HomeController extends Controller
             'old_patient' => $r->old_patient == "Yes"? true : false,
             'payment_mode' => 'cash',
         ]);
-        
+
         if ($opd) {
             return redirect()->back()->with('success','IPD Patient Added');
         }
-        
+
     }
 
 }
