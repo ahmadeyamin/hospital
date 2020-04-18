@@ -1,0 +1,97 @@
+.floormain {
+    border: 1px solid #0380ad;
+    padding: 10px;
+    margin-bottom: -12px;
+    /* background: #777; */
+    box-shadow: 0px 1px 8px 0px rgba(158, 158, 158, 0.75);
+    border-radius: 4px;
+}
+
+.floormain legend {
+    display: block;
+    width: auto;
+    margin-bottom: 0px;
+    color: #333;
+    border-radius: 30px;
+    border-bottom: 0;
+    background: #fff;
+    padding: 5px 8px;
+    border: 1px solid #9a9a96;
+}
+
+.bedgroups {
+    display: block;
+    width: auto;
+    margin-bottom: 10px;
+    color: #333;
+    border-radius: 10px;
+    border-bottom: 0;
+    background: #fff;
+    padding: 5px 8px;
+    border: 1px solid #9a9a96;
+}
+
+.floormain legend h4 {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+    font-family: 'arial';
+}
+
+.bedgray,
+.bedred,
+.bedgreen {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.bedgreen i {
+    color: #65ac14;
+}
+
+.bedgreen .bedtpmiuns6 {
+    margin-top: -6px;
+    font-family: 'Arial';
+    color: #11a009;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bedgray i,
+.bedred i,
+.bedgreen i {
+    font-size: 50px;
+}
+
+.bedred i {
+    color: #fa6385;
+}
+
+.bedred .bedtpmiuns6 {
+    margin-top: -6px;
+    font-family: 'Arial';
+    color: #fa6485;
+    overflow: hidden;
+    width: 130%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.form-group label{
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+}
+.form-group input,.form-group select{
+    height: 30px !important;
+    padding: 4px 7px !important;
+    border-radius: 5px !important;
+}
+.form-group textarea{
+    padding: 4px 7px !important;
+    border-radius: 5px !important;
+    font-size: 13px !important;
+    height: 30px !important;
+    line-height: 13px !important;
+}
