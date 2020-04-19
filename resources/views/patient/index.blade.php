@@ -158,7 +158,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--./col-md-6-->
+                                    
                                     <div class="col-md-6 col-sm-12">
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -196,7 +196,7 @@
 
                                         </div>
                                     </div>
-                                    <!--./col-md-6-->
+
                                     @csrf
 
                                     <div class="col-sm-3">
@@ -235,11 +235,11 @@
                                         </div> --}}
                                     </div>
                                 </div>
-                                <!--./row-->
+
                             </div>
-                            <!--./col-md-8-->
+
                         </div>
-                        <!--./row-->
+
                     </div>
                 </div>
                 <div class="modal-footer">

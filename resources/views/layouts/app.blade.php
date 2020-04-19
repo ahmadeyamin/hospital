@@ -2,43 +2,41 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>XRay - Responsive Bootstrap 4 Admin Dashboard Template</title>
-    <!-- Favicon -->
+
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <!-- Typography CSS -->
+
     <link rel="stylesheet" href="{{ asset('css/typography.css') }}">
-    <!-- Style CSS -->
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- Responsive CSS -->
+
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-    <!-- Full calendar -->
-    <link href='{{ asset('fullcalendar/core/main.css') }}' rel='stylesheet' />
-    <link href='{{ asset('fullcalendar/daygrid/main.css') }}' rel='stylesheet' />
-    <link href='{{ asset('fullcalendar/timegrid/main.css') }}' rel='stylesheet' />
-    <link href='{{ asset('fullcalendar/list/main.css') }}' rel='stylesheet' />
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     @yield('css')
+
+
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
 <body>
-    <!-- loader Start -->
+
     <div id="loading">
         <div id="loading-center">
 
         </div>
     </div>
-    <!-- loader END -->
-    <!-- Wrapper Start -->
+
+
     <div class="wrapper">
-        <!-- Sidebar  -->
+
         <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
                 <a href="index-2.html">
@@ -62,9 +60,9 @@
             </div>
         </div>
 
-        <!-- Page Content  -->
+
         <div id="content-page" class="content-page">
-            <!-- TOP Nav Bar -->
+
             <div class="iq-top-navbar">
                 <div class="iq-navbar-custom">
                     <div class="iq-sidebar-logo">
@@ -250,14 +248,14 @@
 
                 </div>
             </div>
-            <!-- TOP Nav Bar END -->
+
             <div class="container-fluid">
 
                 @yield('content')
 
 
             </div>
-            <!-- Footer -->
+
             <footer class="bg-white iq-footer mt-5">
                 <div class="container-fluid">
                     <div class="row">
@@ -268,52 +266,52 @@
                     </div>
                 </div>
             </footer>
-            <!-- Footer END -->
+
         </div>
     </div>
-    <!-- Wrapper END -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <!-- Appear JavaScript -->
+
     <script src="{{ asset('js/jquery.appear.js') }}"></script>
-    <!-- Countdown JavaScript -->
-    <script src="{{ asset('js/countdown.min.js') }}"></script>
-    <!-- Counterup JavaScript -->
-    <script src="{{ asset('js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
-    <!-- Wow JavaScript -->
-    <script src="{{ asset('js/wow.min.js') }}"></script>
-    <!-- Apexcharts JavaScript -->
-    <script src="{{ asset('js/apexcharts.js') }}"></script>
-    <!-- Slick JavaScript -->
-    <script src="{{ asset('js/slick.min.js') }}"></script>
-    <!-- Select2 JavaScript -->
+
+    {{-- <script src="{{ asset('js/countdown.min.js') }}"></script> --}}
+
+    {{-- <script src="{{ asset('js/waypoints.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('js/jquery.counterup.min.js') }}"></script> --}}
+
+    {{-- <script src="{{ asset('js/wow.min.js') }}"></script> --}}
+
+    {{-- <script src="{{ asset('js/apexcharts.js') }}"></script> --}}
+
+    {{-- <script src="{{ asset('js/slick.min.js') }}"></script> --}}
+
     <script src="{{ asset('js/select2.min.js') }}"></script>
-    <!-- Owl Carousel JavaScript -->
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <!-- Magnific Popup JavaScript -->
+
+    {{-- <script src="{{ asset('js/owl.carousel.min.js') }}"></script> --}}
+
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <!-- Smooth Scrollbar JavaScript -->
+
     <script src="{{ asset('js/smooth-scrollbar.js') }}"></script>
-    <!-- lottie JavaScript -->
-    <script src="{{ asset('js/lottie.js') }}"></script>
-    <!-- am core JavaScript -->
-    <script src="{{ asset('js/core.js') }}"></script>
-    <!-- am charts JavaScript -->
-    <script src="{{ asset('js/charts.js') }}"></script>
-    <!-- am animated JavaScript -->
+
+    {{-- <script src="{{ asset('js/lottie.js') }}"></script> --}}
+
+    {{-- <script src="{{ asset('js/core.js') }}"></script> --}}
+
+    {{-- <script src="{{ asset('js/charts.js') }}"></script> --}}
+
     <script src="{{ asset('js/animated.js') }}"></script>
-    <!-- am kelly JavaScript -->
-    <script src="{{ asset('js/kelly.js') }}"></script>
-    <!-- Flatpicker Js -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <!-- Chart Custom JavaScript -->
+
+    {{-- <script src="{{ asset('js/kelly.js') }}"></script> --}}
+
+    {{-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> --}}
+
     <script src="{{ asset('js/chart-custom.js') }}"></script>
-    <!-- Custom JavaScript -->
+
     <script src="{{ asset('js/custom.js') }}"></script>
 
 

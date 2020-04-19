@@ -95,3 +95,6 @@
     height: 30px !important;
     line-height: 13px !important;
 }
+.bootstrap-datetimepicker-widget.dropdown-menu{
+    padding: 0px !important;
+}

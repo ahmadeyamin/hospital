@@ -1,31 +1,31 @@
 <!doctype html>
 <html lang="en">
-   
-<!-- Mirrored from iqonic.design/themes/xray/html/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:14:51 GMT -->
+
+
 <head>
-      <!-- Required meta tags -->
+
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>XRay - Responsive Bootstrap 4 Admin Dashboard Template</title>
-      <!-- Favicon -->
+
       <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
-      <!-- Bootstrap CSS -->
+
       <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-      <!-- Typography CSS -->
+
       <link rel="stylesheet" href="{{ asset('css/typography.css') }}">
-      <!-- Style CSS -->
+
       <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-      <!-- Responsive CSS -->
+
       <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
    </head>
    <body>
-      <!-- loader Start -->
+
       <div id="loading">
          <div id="loading-center">
          </div>
       </div>
-      <!-- loader END -->
-        <!-- Sign in Start -->
+
+
         <section class="sign-in-page">
             <div class="container sign-in-page-bg mt-5 p-0">
                 <div class="row no-gutters">
@@ -94,23 +94,23 @@
                 </div>
             </div>
         </section>
-        <!-- Sign in END -->
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
       <script src="{{ asset('js/jquery.min.js') }}"></script>
       <script src="{{ asset('js/popper.min.js') }}"></script>
       <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-      <!-- Appear JavaScript -->
 
-      <!-- Owl Carousel JavaScript -->
+
+
       <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-      <!-- Magnific Popup JavaScript -->
+
       <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 
-      <!-- Chart Custom JavaScript -->
-      <!-- Custom JavaScript -->
+
+
       <script src="{{ asset('js/custom.js') }}"></script>
    </body>
 
-<!-- Mirrored from iqonic.design/themes/xray/html/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:15:00 GMT -->
+
 </html>

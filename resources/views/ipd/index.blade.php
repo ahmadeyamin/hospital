@@ -2,7 +2,7 @@
 
 @section('content')
 
-<!-- Large modal -->
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> <i
         class="fa fa-plus"></i> Add Patient</button>
 
@@ -86,15 +86,15 @@
                                                 <span id="note"></span>
                                             </li>
                                         </ul>
-                                    </div><!-- ./col-md-9 -->
+                                    </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3">
                                         <div class="pull-right">
-                                            <!--<b>Patient Photo </b>-->
-                                            <!--<span id="image"></span>-->
+
+
 
                                             <img class="modal-profile-user-img img-responsive" src="https://demo.smart-hospital.in/uploads/patient_images/no_image.png" id="image" alt="User profile picture">
                                         </div>
-                                    </div><!-- ./col-md-3 -->
+                                    </div>
                                 </div> --}}
 
                                 <div class="row">
@@ -150,9 +150,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--./row-->
+
                             </div>
-                            <!--./col-md-8-->
+
                             <div class="col-lg-4 col-md-4 col-sm-4 col-eq ptt10">
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -266,11 +266,11 @@
                                     </div>
 
                                 </div>
-                                <!--./row-->
+
                             </div>
-                            <!--./col-md-4-->
+
                         </div>
-                        <!--./row-->
+
 
                         <div class="row">
                             <div class="box-footer">
@@ -286,7 +286,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--./row-->
+
                     </form>
                 </div>
             </div>
