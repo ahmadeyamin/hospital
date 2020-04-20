@@ -68,6 +68,7 @@ class HomeController extends Controller
 
         return view('opd.index', compact(['opds','patients','doctors']));
     }
+
     public function get_ipd()
     {
         $opds = PatientInOut::with(
@@ -89,6 +90,7 @@ class HomeController extends Controller
     {
         $r->validate([
             'name' => 'required',
+            'gender' => 'required',
         ]);
 
         $patient = Patient::create([
@@ -112,6 +114,7 @@ class HomeController extends Controller
                 return response([
                     'success' => 'New Patient Added Successfully :)',
                     'redirect' =>  route('patients'),
+                    'data' => $patient,
                 ],200);
             }else{
                 return response([
@@ -131,49 +134,6 @@ class HomeController extends Controller
 
     }
 
-
-
-
-
-
-
-
-
-    public function set_opd(Request $r)
-    {
-        $r = $r;
-        $r->validate([
-            'patient' => 'required|exists:patients,id',
-            'doctor' => 'required|exists:staff,id',
-            'appointment_date' => 'required|date',
-            'amount' => 'required|integer',
-            'payment_mode' => 'required',
-        ]);
-
-
-        $opd = PatientInOut::create([
-            'patient_id' => $r->patient,
-            'cons_doctor_id' => $r->doctor,
-            'bed_id' => null,
-            'type' => 'opd',
-            'amount' => $r->amount,
-            'appointment_date' => $r->appointment_date,
-            'height' => $r->height??null,
-            'weight' => $r->weight??null,
-            'bp' => $r->bp??null,
-            'case_type' => $r->case_type??null,
-            'casualty' => $r->casualty??null,
-            'symptoms' => $r->symptoms??null,
-            'refference' => $r->refference??null,
-            'old_patient' => $r->old_patient == "Yes"? true : false,
-            'payment_mode' => $r->payment_mode,
-        ]);
-
-        if ($opd) {
-            return redirect()->back()->with('success','Opd Patient Added');
-        }
-
-    }
 
 
 

@@ -24,6 +24,7 @@ class CreateStaffTable extends Migration
                 'pharmacist',
                 'laboratorist',
                 'peceptionist',
+                'agent',
             ]);
             $table->string('phone')->nullable();
             $table->string('email')->nullable();

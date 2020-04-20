@@ -127,7 +127,7 @@ Index Of Script
         jQuery('.iq-sidebar-menu li').click(function(ele, index) {
             jQuery('.iq-sidebar-menu li').has('.iq-submenu').removeClass('active');
             jQuery(this).has('.iq-submenu').toggleClass('active');
-            
+
         })
 
         /*---------------------------------------------------------------------
@@ -289,9 +289,9 @@ Index Of Script
         /*---------------------------------------------------------------------
         Select input
         -----------------------------------------------------------------------*/
-        jQuery('.select2jsMultiSelect').select2({
-            tags: true
-        });
+        // jQuery('.select2jsMultiSelect').select2({
+        //     tags: true
+        // });
 
         /*---------------------------------------------------------------------
         Search input
@@ -326,151 +326,151 @@ Index Of Script
         });
 
 
-        /*---------------------------------------------------------------------
-        Counter
-        -----------------------------------------------------------------------*/
-        jQuery('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
+        // /*---------------------------------------------------------------------
+        // Counter
+        // -----------------------------------------------------------------------*/
+        // jQuery('.counter').counterUp({
+        //     delay: 10,
+        //     time: 1000
+        // });
 
         /*---------------------------------------------------------------------
         slick
         -----------------------------------------------------------------------*/
-        jQuery('.slick-slider').slick({
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 9,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '30',
-                    slidesToShow: 3
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '15',
-                    slidesToShow: 1
-                }
-            }],
-            nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
-            prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
+        // jQuery('.slick-slider').slick({
+        //     centerMode: true,
+        //     centerPadding: '60px',
+        //     slidesToShow: 9,
+        //     slidesToScroll: 1,
+        //     focusOnSelect: true,
+        //     responsive: [{
+        //         breakpoint: 992,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '30',
+        //             slidesToShow: 3
+        //         }
+        //     }, {
+        //         breakpoint: 480,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '15',
+        //             slidesToShow: 1
+        //         }
+        //     }],
+        //     nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
+        //     prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
+        // });
 
-        jQuery('#post-slider').slick({
-            centerMode: false,
-            centerPadding: '60px',
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '30',
-                    slidesToShow: 1
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '15',
-                    slidesToShow: 1
-                }
-            }],
-            nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
-            prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
+        // jQuery('#post-slider').slick({
+        //     centerMode: false,
+        //     centerPadding: '60px',
+        //     slidesToShow: 2,
+        //     slidesToScroll: 1,
+        //     focusOnSelect: true,
+        //     responsive: [{
+        //         breakpoint: 992,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '30',
+        //             slidesToShow: 1
+        //         }
+        //     }, {
+        //         breakpoint: 480,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '15',
+        //             slidesToShow: 1
+        //         }
+        //     }],
+        //     nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
+        //     prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
+        // });
 
-        jQuery('#doster-list-slide').slick({
-            centerMode: false,
-            centerPadding: '60px',
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '30',
-                    slidesToShow: 3
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '15',
-                    slidesToShow: 1
-                }
-            }],
-            nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
-            prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
+        // jQuery('#doster-list-slide').slick({
+        //     centerMode: false,
+        //     centerPadding: '60px',
+        //     slidesToShow: 5,
+        //     slidesToScroll: 1,
+        //     focusOnSelect: true,
+        //     responsive: [{
+        //         breakpoint: 992,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '30',
+        //             slidesToShow: 3
+        //         }
+        //     }, {
+        //         breakpoint: 480,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '15',
+        //             slidesToShow: 1
+        //         }
+        //     }],
+        //     nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
+        //     prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
+        // });
 
-        jQuery('#contact-slider').slick({
-            centerMode: false,
-            centerPadding: '60px',
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '30',
-                    slidesToShow: 3
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '15',
-                    slidesToShow: 1
-                }
-            }],
-            nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
-            prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
-        jQuery('#blog-slider').slick({
-            centerMode: false,
-            centerPadding: '60px',
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '30',
-                    slidesToShow: 2
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '15',
-                    slidesToShow: 1
-                }
-            }],
-            nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
-            prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
-        
+        // jQuery('#contact-slider').slick({
+        //     centerMode: false,
+        //     centerPadding: '60px',
+        //     slidesToShow: 4,
+        //     slidesToScroll: 1,
+        //     focusOnSelect: true,
+        //     responsive: [{
+        //         breakpoint: 992,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '30',
+        //             slidesToShow: 3
+        //         }
+        //     }, {
+        //         breakpoint: 480,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '15',
+        //             slidesToShow: 1
+        //         }
+        //     }],
+        //     nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
+        //     prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
+        // });
+        // jQuery('#blog-slider').slick({
+        //     centerMode: false,
+        //     centerPadding: '60px',
+        //     slidesToShow: 3,
+        //     slidesToScroll: 1,
+        //     focusOnSelect: true,
+        //     responsive: [{
+        //         breakpoint: 992,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '30',
+        //             slidesToShow: 2
+        //         }
+        //     }, {
+        //         breakpoint: 480,
+        //         settings: {
+        //             arrows: false,
+        //             centerMode: true,
+        //             centerPadding: '15',
+        //             slidesToShow: 1
+        //         }
+        //     }],
+        //     nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
+        //     prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
+        // });
+
         /*---------------------------------------------------------------------
         Progress Bar
         -----------------------------------------------------------------------*/
@@ -505,15 +505,15 @@ Index Of Script
 
         /*---------------------------------------------------------------------
         Wow Animation
-        -----------------------------------------------------------------------*/
-        let wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: false,
-            live: true
-        });
-        wow.init();
+        // -----------------------------------------------------------------------*/
+        // let wow = new WOW({
+        //     boxClass: 'wow',
+        //     animateClass: 'animated',
+        //     offset: 0,
+        //     mobile: false,
+        //     live: true
+        // });
+        // wow.init();
 
 
         /*---------------------------------------------------------------------
@@ -557,7 +557,7 @@ Index Of Script
         });
 
         /*---------------------------------------------------------------------
-        Chat 
+        Chat
         -----------------------------------------------------------------------*/
         jQuery(document).on('click', '#chat-start', function() {
             jQuery('.chat-data-left').toggleClass('show');

@@ -300,7 +300,7 @@
 
     {{-- <script src="{{ asset('js/lottie.js') }}"></script> --}}
 
-    {{-- <script src="{{ asset('js/core.js') }}"></script> --}}
+    <script src="{{ asset('js/core.js') }}"></script>
 
     {{-- <script src="{{ asset('js/charts.js') }}"></script> --}}
 
