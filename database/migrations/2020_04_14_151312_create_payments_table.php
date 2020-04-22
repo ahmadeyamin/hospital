@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreatePaymentsTable extends Migration
 {
@@ -19,14 +20,14 @@ class CreatePaymentsTable extends Migration
             $table->integer('patient_id')->unsigned()->nullable();
             $table->integer('bill_id')->unsigned()->nullable();
 
-            $table->integer('paymentable_id');
-            $table->string('paymentable_type');
+            $table->integer('paymentable_id')->nullable();
+            $table->string('paymentable_type')->nullable();
 
-            $table->date('date');
             $table->integer('paid_amount');
-            $table->string('payment_mode');
-            $table->text('note');
+            $table->string('payment_mode')->nullable();
+            $table->text('note')->nullable();
 
+            $table->date('date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
             $table->softDeletes();
 

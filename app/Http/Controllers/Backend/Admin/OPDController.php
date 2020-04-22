@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Model\Bed;
+use Carbon\Carbon;
 use App\Model\Staff;
 use App\Model\Patient;
 use App\Model\PatientInOut;
@@ -53,24 +54,32 @@ class OPDController extends Controller
      */
     public function store(Request $r)
     {
-        return $r;
 
         $r->validate([
             'patient' => 'required|exists:patients,id',
             'doctor' => 'required|exists:staff,id',
-            'appointment_date' => 'required|date',
-            'amount' => 'required|integer',
+            'appointment_date' => 'required|date_format:d/m/Y h:i A',
+            'paid_amount' => 'required|integer',
             'payment_mode' => 'required',
-            'refferencer' => 'exists:staff,id',
+            'refferencer' => 'nullable|exists:staff,id',
+            'referencer_type' => 'nullable|in:p,m',
+            'apply_charge' => 'required|integer|min:0',
         ]);
 
+        if ($r->filled('refferencer') && $r->referencer_type == 'p') {
+            $r['referencer_amount'] = (($r->referencer_amount * $r->apply_charge) / 100);
+        }
+
+        // return $r;
+
+        $r['appointment_date'] = Carbon::createFromFormat('d/m/Y h:i A',$r->appointment_date);
 
         $opd = PatientInOut::create([
             'patient_id' => $r->patient,
             'cons_doctor_id' => $r->doctor,
             'bed_id' => null,
             'type' => 'opd',
-            'amount' => $r->amount,
+            'amount' => $r->standerd_charge,
             'appointment_date' => $r->appointment_date,
             'height' => $r->height??null,
             'weight' => $r->weight??null,
@@ -83,11 +92,30 @@ class OPDController extends Controller
             'payment_mode' => $r->payment_mode,
         ]);
 
-        $opd->charges()->create([
+        $opd->charge()->create([
             'patient_id' => $opd->patient_id,
             'bill_id' => null,
-            'referencer_id' => null,
+            'referencer_id' => $r->refferencer,
+            'reference_type' => $r->referencer_type,
+            'referencer_amount' =>  $r->filled('refferencer') ? $r->referencer_amount : 0,
+            'apply_charge' =>  $r->apply_charge,
+            'date' =>  now(),
         ]);
+
+        if ($r->filled('paid_amount') && $r->paid_amount > 0) {
+            $opd->payments()->create([
+                'patient_id' => $opd->patient_id,
+                'bill_id' => null,
+                'paid_amount' =>  $r->paid_amount,
+                'payment_mode' =>  $r->payment_mode,
+                'date' =>  now(),
+                'note' =>  null,
+            ]);
+        }
+
+
+
+
 
 
         if ($r->ajax()) {

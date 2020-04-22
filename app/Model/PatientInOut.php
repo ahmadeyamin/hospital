@@ -20,14 +20,19 @@ class PatientInOut extends Model
         return $this->belongsTo(Staff::class, 'cons_doctor_id', 'id');
     }
 
-    public function charges()
+    public function charge()
     {
-        return $this->morphMany(PatientCharge::class, 'chargeable');
+        return $this->morphOne(PatientCharge::class, 'chargeable');
     }
 
     public function bed()
     {
         return $this->hasOne(Bed::class);
+    }
+
+    public function payments()
+    {
+        return $this->morphOne(Payment::class, 'paymentable');
     }
 
 

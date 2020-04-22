@@ -20,6 +20,7 @@ class DatatabelController extends Controller
             [
                 'doctor:name,id,phone',
                 'patient:name,id,mobileno,gender,age,guardian_name',
+                'charge'
             ]
         )->where('type', 'opd');
 
@@ -36,9 +37,18 @@ class DatatabelController extends Controller
                     <i class="fa fa-edit"></i>
                 </a>
             </div>';
-        })->addColumn('total_visit',function()
+        })
+        ->editColumn('id',function($var)
         {
-            return '0';
+            return  'OPD'.$var->id;
+        })
+        ->editColumn('charge.apply_charge',function($var)
+        {
+            return  $var->charge->apply_charge."৳";
+        })
+        ->addColumn('total_visit',function($opds)
+        {
+            return $opds->patient->opds()->count();
         })
         ->toJson();
 

@@ -45,7 +45,7 @@
                 </a>
                 <div class="iq-menu-bt-sidebar">
                     <div class="iq-menu-bt align-self-center">
-                        <div class="wrapper-menu">
+                        <div class="wrapper-menu open">
                             <div class="main-circle"><i class="ri-more-fill"></i></div>
                             <div class="hover-circle"><i class="ri-more-2-fill"></i></div>
                         </div>

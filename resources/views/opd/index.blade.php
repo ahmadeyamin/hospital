@@ -2,15 +2,25 @@
 
 
 @section('css')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap4.min.css" />
+
 <link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.default.min.css" />
 
-
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 <style>
 
+
+.table th, .jsgrid .jsgrid-table th, .table td, .jsgrid .jsgrid-table td {
+        vertical-align: middle;
+        font-size: 0.875rem;
+        line-height: 1;
+        white-space: unset !important;
+    }
+
+    .pagination, .jsgrid .jsgrid-pager {
+        overflow-x: auto;
+    }
     table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting {
         padding-right: 20px;
         font-size: smaller;
@@ -21,7 +31,7 @@
     table.dataTable td, table.dataTable th {
         -webkit-box-sizing: content-box;
         box-sizing: content-box;
-        font-size: 12px;
+        /* font-size: 14px; */
     }
 
     .table th, .jsgrid .jsgrid-table th, .table td, .jsgrid .jsgrid-table td {
@@ -32,16 +42,9 @@
     }
 
     .pagination, .jsgrid .jsgrid-pager {
-    overflow-x: auto;
+        overflow-x: auto;
     }
 
-    .table th img, .jsgrid .jsgrid-table th img, .table td img, .jsgrid .jsgrid-table td img {
-
-        width: 70px;
-        height: auto;
-        border-radius: 0px !important;
-
-    }
 
     .modal-profile-user-img{
         height: 100px;
@@ -305,8 +308,8 @@
                                             <div class="form-group">
                                                 <label for="referencer_type">Type</label><span class="text-danger">*</span>
                                                 <select name="referencer_type" id="referencer_type">
-                                                    <option value="">Amount</option>
-                                                    <option value="">Persent ( % )</option>
+                                                    <option value="m">Amount</option>
+                                                    <option value="p">Persent ( % )</option>
                                                 </select>
 
                                             </div>
@@ -397,10 +400,10 @@
             </div>
         </div>
     </div>
-    <div class="card ">
+    <div class="card">
     <div class="card-body">
-        <div class="table-responsive  table-lg">
-            <table class="table dataTable display cell-border compact hover order-column  table-striped table-bordered row-border stripe" id="opd-table">
+        <div class="table-responsive col-sm-12">
+            <table class="table dataTable table-hover mb-3 table-bordered" id="opd-table">
                 <thead>
                     <tr>
                         <th width="5%">Serial</th>
@@ -409,7 +412,7 @@
                         <th width="10%">Gender</th>
                         <th width="5%">Phone</th>
                         <th width="10%">Doctor</th>
-                        <th width="10%">Total Visit</th>
+                        <th width="10%">Amount</th>
                         <th width="13%">Last Visit</th>
                         <th width="30%">Action</th>
                     </tr>
@@ -720,13 +723,13 @@ var app = new Vue({
             serverSide: true,
             ajax: "{{route('ajax.get_opd')}}",
             columns: [
-                { data: 'serial_id', name: 'id' },
+                { data: 'id', name: 'id' },
                 { data: 'patient.name', name: 'patient.name' },
                 { data: 'patient.guardian_name', name: 'patient.guardian_name' },
                 { data: 'patient.gender', name: 'patient.gender' },
                 { data: 'patient.mobileno', name: 'patient.mobileno' },
                 { data: 'doctor.name', name: 'doctor.name' },
-                { data: 'total_visit', name: 'total_visit' },
+                { data: 'charge.apply_charge', name: 'charge.apply_charge' },
                 { data: 'appointment_date', name: 'appointment_date' },
                 { data: 'action', name: 'action', orderable: false, searchable: false}
             ],
@@ -746,7 +749,10 @@ var app = new Vue({
 
 
     $(function () {
-        $('#appointment_date').datetimepicker();
+        $('#appointment_date').datetimepicker({
+            format:'DD/MM/YYYY h:mm A',
+            ampm:true
+        });
 
         $('#doctor').selectize({
             onChange: function(query) {

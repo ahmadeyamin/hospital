@@ -15,6 +15,11 @@ class Patient extends Model
         return $this->hasMany(PatientInOut::class);
     }
 
+    public function opds()
+    {
+        return $this->opdipds()->where('type','opd')->get();
+    }
+
     public function test()
     {
         return PatientInOut::where('patient_id', $this->id)->get();
@@ -45,5 +50,8 @@ class Patient extends Model
         return $this->hasMany(LabReport::class,'patient_id');
     }
 
-
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }
