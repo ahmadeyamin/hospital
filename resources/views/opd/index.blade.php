@@ -723,7 +723,7 @@ var app = new Vue({
             serverSide: true,
             ajax: "{{route('ajax.get_opd')}}",
             columns: [
-                { data: 'id', name: 'id' },
+                { data: 'serial_id', name: 'serial_id' },
                 { data: 'patient.name', name: 'patient.name' },
                 { data: 'patient.guardian_name', name: 'patient.guardian_name' },
                 { data: 'patient.gender', name: 'patient.gender' },

@@ -16,7 +16,7 @@ class CreatePatientInOutsTable extends Migration
         Schema::create('patient_in_outs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('patient_id')->unsigned();
-            $table->integer('serial_id')->nullable();
+            $table->string('serial_id')->nullable();
             $table->integer('cons_doctor_id')->unsigned();
             $table->integer('bed_id')->unsigned()->nullable();
             $table->enum('type', [

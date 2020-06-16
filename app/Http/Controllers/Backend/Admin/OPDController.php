@@ -64,6 +64,7 @@ class OPDController extends Controller
             'refferencer' => 'nullable|exists:staff,id',
             'referencer_type' => 'nullable|in:p,m',
             'apply_charge' => 'required|integer|min:0',
+            'serial_id' => 'nullable|unique:patient_in_outs,serial_id',
         ]);
 
         if ($r->filled('refferencer') && $r->referencer_type == 'p') {
@@ -74,9 +75,12 @@ class OPDController extends Controller
 
         $r['appointment_date'] = Carbon::createFromFormat('d/m/Y h:i A',$r->appointment_date);
 
+        $lastid = @PatientInOut::all()->last()->id+1 ?? 1;
+
         $opd = PatientInOut::create([
             'patient_id' => $r->patient,
             'cons_doctor_id' => $r->doctor,
+            'serial_id' => $r->filled('serial_id') ? 'C-'.$r->input('serial_id') : 'OPD-'.$lastid,
             'bed_id' => null,
             'type' => 'opd',
             'amount' => $r->standerd_charge,

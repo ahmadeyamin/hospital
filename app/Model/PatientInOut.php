@@ -20,6 +20,15 @@ class PatientInOut extends Model
         return $this->belongsTo(Staff::class, 'cons_doctor_id', 'id');
     }
 
+    // public function setSerialIdAttribute($var)
+    // {
+    //     if ($this->type == 'opd') {
+    //        return  $this->attributes['serial_id'] == null ? 'OPD'.$this->id : 'OPD'.$var->serial_id ;
+    //     }else{
+    //         return  $this->attributes['serial_id'] == null ? 'IPD'.$this->id : 'IPD'.$var->serial_id ;
+    //     }
+    // }
+
     public function charge()
     {
         return $this->morphOne(PatientCharge::class, 'chargeable');
